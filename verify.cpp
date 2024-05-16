@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int verifyfuncionario(int a,  int b) {
 	FILE *file;	
@@ -7,14 +8,17 @@ int verifyfuncionario(int a,  int b) {
 	
 		if(file == NULL) {
 		printf("Nao foi possivel abrir o arquivo");
-		return 3;
 		}
 		
 	return 0;
 		
 }
 
-void criarconta(){
+void criar_Conta_funcionario(int *ID, int *idade){
+	struct Registro{
+		int ID;
+		int idade;
+	};
 	FILE *file;
 	
 	file = fopen("contas.txt", "w");
@@ -24,4 +28,7 @@ void criarconta(){
 		getchar();
 		exit(0);
 	}
+
+	
+	
 }
