@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "destinador.h"
-#include "tfuncionario.h"
-#include "tcliente.h"
+
 
 void destinador(int *a){
 	int op = 0;
@@ -35,24 +34,26 @@ void destinador(int *a){
 			printf(" ########  #####    ##### ####    ##### ####   ####\n\n");
 			printf("=========================================================\n");
 			printf("=========================================================\n");
-			printf("=========================================================\n\n\n\t\t\t");
+			printf("=========================================================\n\n\n\t");
 			
 			
-				printf("DIGITE A OPCAO DESEJADA:\n");
-				printf("\n1 - FUNCIONARIO");
-				printf("\n2 - CLIENTE");
-				printf("\n3 - SAIR DO PROGRAMA\n");
-				printf("- ");
+				printf("DIGITE A OPCAO DESEJADA:\n\n\t");
+				printf("1 - FUNCIONARIO\n\t");
+				printf("2 - CLIENTE\n\t");
+				printf("3 - SAIR DO PROGRAMA\n\n\t");
+				printf(": ");
 				scanf("%d", &op);	
 				break;
 		}
 		
 		if(op == 1){
-			tfuncionario(&0);
+			int j =0;
+			tfuncionario(&j);
 		}
 		
 		else if (op == 2){
-			tcliente(&0);
+			int j = 0;
+			tcliente(&j);
 		}
 		
 		else {
