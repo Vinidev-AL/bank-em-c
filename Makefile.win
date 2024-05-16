@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = destinador.o main.o tfuncionario.o tcliente.o
-LINKOBJ  = destinador.o main.o tfuncionario.o tcliente.o
+OBJ      = main.o destinador.o verify.o
+LINKOBJ  = main.o destinador.o verify.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -24,14 +24,11 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-destinador.o: destinador.cpp
-	$(CC) -c destinador.cpp -o destinador.o $(CFLAGS)
-
 main.o: main.cpp
 	$(CC) -c main.cpp -o main.o $(CFLAGS)
 
-tfuncionario.o: tfuncionario.cpp
-	$(CC) -c tfuncionario.cpp -o tfuncionario.o $(CFLAGS)
+destinador.o: destinador.cpp
+	$(CC) -c destinador.cpp -o destinador.o $(CFLAGS)
 
-tcliente.o: tcliente.cpp
-	$(CC) -c tcliente.cpp -o tcliente.o $(CFLAGS)
+verify.o: verify.cpp
+	$(CC) -c verify.cpp -o verify.o $(CFLAGS)
