@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = start.o main.o verify.o stylebank.o
-LINKOBJ  = start.o main.o verify.o stylebank.o
+OBJ      = main.o start.o stylebank.o verify.o
+LINKOBJ  = main.o start.o stylebank.o verify.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -24,14 +24,14 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-start.o: start.cpp
-	$(CC) -c start.cpp -o start.o $(CFLAGS)
-
 main.o: main.cpp
 	$(CC) -c main.cpp -o main.o $(CFLAGS)
 
-verify.o: verify.cpp
-	$(CC) -c verify.cpp -o verify.o $(CFLAGS)
+start.o: start.cpp
+	$(CC) -c start.cpp -o start.o $(CFLAGS)
 
 stylebank.o: stylebank.cpp
 	$(CC) -c stylebank.cpp -o stylebank.o $(CFLAGS)
+
+verify.o: verify.cpp
+	$(CC) -c verify.cpp -o verify.o $(CFLAGS)

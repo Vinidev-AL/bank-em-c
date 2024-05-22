@@ -7,27 +7,17 @@ void tfuncionario(){
 	system("color 4");
 	
 	int pass;
-	int ID;
+	char ID[5];
 	int validador;
 	style_bank();
 		
 	printf("TELA PARA FUNCIONARIOS\n\t\t\t\t\t\t\t");
 	
 	printf("DIGITE SEU ID DE FUNCIONARIO: ");
-	scanf("%d", &ID);
-	printf("\t\t\t\t\t\t\t");
-	printf("DIGITE A SUA SENHA: ");
-	scanf("%d", &pass);
+	scanf("%s", &ID);
+
+	verifyfuncionario(ID);
 	
-	validador = verifyfuncionario(ID, pass);
-	
-	if(validador == 3){
-		printf("Erro");
-	}
-	
-	else {
-		printf("Sucesso");
-	}
 }
 
 
@@ -39,14 +29,10 @@ void tcliente(){
 	printf("Tela cliente");
 }
 
-
-
 void tela_Criar_Conta_Funcionario(){
 	system("cls");
 	style_bank();
-	printf("DIGITE O NOME: \n\t\t\t\t\t\t\t");
-	printf("DIGITE O SENHA: \n\t\t\t\t\t\t\t");
-	printf("DIGITE O CPF: \n");
+	criar_Conta_funcionario();
 }
 
 
