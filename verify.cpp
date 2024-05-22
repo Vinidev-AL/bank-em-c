@@ -12,7 +12,7 @@ void verifyfuncionario(char *id) {
 	};
 	Registro registro;
 	FILE *file;	
-	file = fopen("contas.txt", "r");
+	file = fopen("contas.txt", "a");
 	
 		if(file == NULL) {
 		printf("Nao foi possivel abrir o arquivo");
