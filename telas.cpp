@@ -16,9 +16,12 @@ void tela_login_funcionario(){
 void tela_login_cliente(){
 	system("cls");
 	int ID;
+	int agencia;
 	char password[8];
 	printf("Digite sua conta: ");
 	scanf("%d", &ID);
+	printf("\nDigite sua conta: ");
+	scanf("%d", &agencia);
 	printf("\nDigite sua senha: ");
 	scanf("%s", &password);
 };
@@ -36,14 +39,20 @@ void tela_administrador(){
 	
 	switch(opc){
 		case 1:
-			
+			criar_conta_funcionario();
+			break;
 		case 2:
-			
+			criar_conta_cliente();
+			break;
 		case 3:
-			
+			excluir_conta_funcionario();
+			break;
 		case 4:
-		
+			excluir_conta_cliente();
+			break;
 		case 5:			
+			menu_principal();
+			break;
 	}
 	
 }

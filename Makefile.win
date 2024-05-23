@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o verificar.o telas.o style.o structs.o criar.o
-LINKOBJ  = main.o verificar.o telas.o style.o structs.o criar.o
+OBJ      = main.o verificar.o telas.o style.o structs.o criar_conta.o excluir_conta.o
+LINKOBJ  = main.o verificar.o telas.o style.o structs.o criar_conta.o excluir_conta.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -39,5 +39,8 @@ style.o: style.cpp
 structs.o: structs.cpp
 	$(CC) -c structs.cpp -o structs.o $(CFLAGS)
 
-criar.o: criar.cpp
-	$(CC) -c criar.cpp -o criar.o $(CFLAGS)
+criar_conta.o: criar_conta.cpp
+	$(CC) -c criar_conta.cpp -o criar_conta.o $(CFLAGS)
+
+excluir_conta.o: excluir_conta.c
+	$(CC) -c excluir_conta.c -o excluir_conta.o $(CFLAGS)
