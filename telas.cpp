@@ -34,8 +34,8 @@ void tela_administrador(){
 	printf("2 - Criar conta de cliente\n");
 	printf("3 - Excluir conta de funcionario\n");
 	printf("4 - Excluir conta de cliente\n");
-	printf("5 - Sair");
-	
+	printf("5 - Sair\n");
+	scanf("%d", &opc);
 	
 	switch(opc){
 		case 1:
@@ -80,6 +80,7 @@ void menu_principal() {
 			break;
 		case 123456:
 			tela_administrador();
+			break;
 		default:
 			printf("Opcao invalida");
 			break;
