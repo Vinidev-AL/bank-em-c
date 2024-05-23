@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "destinador.h"
 
-int main() {
-	menu_principal();
-}
+typedef struct Data{
+	int dia,
+		mes,
+		ano;
+} Data;

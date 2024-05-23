@@ -1,6 +1,0 @@
-Nome: Raquel
- ID: 12
- Idade: 34
- Senha: 1234
-
-

@@ -22,9 +22,9 @@ LeftChar=1
 Order=3,2,5,4,1
 Focused=3
 [Editor_0]
-CursorCol=42
-CursorRow=106
-TopLine=94
+CursorCol=1
+CursorRow=1
+TopLine=1
 LeftChar=1
 [Editor_2]
 CursorCol=2

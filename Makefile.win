@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o telas.o style.o verify.o
-LINKOBJ  = main.o telas.o style.o verify.o
+OBJ      = main.o verificar.o telas.o style.o structs.o criar.o
+LINKOBJ  = main.o verificar.o telas.o style.o structs.o criar.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,11 +27,17 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CC) -c main.cpp -o main.o $(CFLAGS)
 
+verificar.o: verificar.cpp
+	$(CC) -c verificar.cpp -o verificar.o $(CFLAGS)
+
 telas.o: telas.cpp
 	$(CC) -c telas.cpp -o telas.o $(CFLAGS)
 
 style.o: style.cpp
 	$(CC) -c style.cpp -o style.o $(CFLAGS)
 
-verify.o: verify.cpp
-	$(CC) -c verify.cpp -o verify.o $(CFLAGS)
+structs.o: structs.cpp
+	$(CC) -c structs.cpp -o structs.o $(CFLAGS)
+
+criar.o: criar.cpp
+	$(CC) -c criar.cpp -o criar.o $(CFLAGS)
