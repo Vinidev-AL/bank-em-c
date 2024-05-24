@@ -20,8 +20,9 @@ typedef struct Data{
 } Data;
 
 typedef struct Endereco{
+	int cep;
 	char logradouro[50];
-	char n_casa[20];
+	int n_casa[20];
 	char bairro[20];
 	char cidade[20];
 	char estado[20];
@@ -35,15 +36,20 @@ typedef struct{
 }Telefone;
 
 typedef struct{
-	int Nome,
-	Sobrenome;
+	char nome[32];
+	char sobrenome[100];
 }Nome;
 
 typedef struct{
-	Data data;
-	char cpf[11];
-	Endereco endereco;
-	Telefone telefone;
+	int agencia;
+	int n_conta;
+	int limite;
+	Data vencimento;
 	Nome nome;
+	char cpf[11];
+	Data nascimento;
+	Telefone telefone;
+	Endereco endereco;
+	char senha[32];
 } Cliente;
 #endif
