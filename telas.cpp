@@ -10,20 +10,31 @@ void tela_login_funcionario(){
 	printf("Digite seu ID: ");
 	scanf("%d", &ID);
 	printf("\nDigite sua senha: ");
-	scanf("%s", &password);
+	scanf("%s", password);
 }
 
 void tela_login_cliente(){
 	system("cls");
-	int ID;
+	int conta;
 	int agencia;
-	char password[8];
+	int teste;
+	char password[9];
 	printf("Digite sua conta: ");
-	scanf("%d", &ID);
-	printf("\nDigite sua conta: ");
+	scanf("%d", &conta);
+	printf("\nDigite sua agencia: ");
 	scanf("%d", &agencia);
 	printf("\nDigite sua senha: ");
-	scanf("%s", &password);
+	scanf("%s", password);
+	teste = login_cliente(conta, password);
+
+	system("clear");
+
+	if(teste == 0){
+        printf("Erro");
+	}
+	else{
+        printf("Correto");
+	}
 };
 
 void tela_administrador(){
@@ -36,7 +47,7 @@ void tela_administrador(){
 	printf("4 - Excluir conta de cliente\n");
 	printf("5 - Sair\n");
 	scanf("%d", &opc);
-	
+
 	switch(opc){
 		case 1:
 			criar_conta_funcionario();
@@ -50,11 +61,11 @@ void tela_administrador(){
 		case 4:
 			excluir_conta_cliente();
 			break;
-		case 5:			
+		case 5:
 			menu_principal();
 			break;
 	}
-	
+
 }
 
 
@@ -66,16 +77,16 @@ void menu_principal() {
 	printf("2 - CLIENTE\n");
 	printf("3 - SAIR DO PROGRAMA\n");
 	scanf("%d", &opc);
-	
-	
+
+
 	switch(opc){
 		case 1:
 			tela_login_funcionario();
 			break;
-		case 2: 
+		case 2:
 			tela_login_cliente();
 			break;
-		case 3: 
+		case 3:
 			exit(0);
 			break;
 		case 123456:

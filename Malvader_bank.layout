@@ -1,38 +1,25 @@
-[Editor_5]
-CursorCol=1
-CursorRow=1
-TopLine=1
-LeftChar=1
-[Editor_3]
-CursorCol=23
-CursorRow=59
-TopLine=49
-LeftChar=1
-[Editor_6]
-CursorCol=1
-CursorRow=4
-TopLine=1
-LeftChar=1
-[Editor_4]
-CursorCol=1
-CursorRow=5
-TopLine=1
-LeftChar=1
-[Editors]
-Order=3,2,5,4,1
-Focused=3
-[Editor_0]
-CursorCol=2
-CursorRow=7
-TopLine=1
-LeftChar=1
-[Editor_2]
-CursorCol=2
-CursorRow=7
-TopLine=1
-LeftChar=1
-[Editor_1]
-CursorCol=1
-CursorRow=15
-TopLine=1
-LeftChar=1
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="default" />
+	<File name="destinador.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="408" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="criar_conta.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="778" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="telas.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="224" topLine="3" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
