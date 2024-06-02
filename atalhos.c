@@ -3,11 +3,15 @@
 #include "destinador.h"
 #include <string.h>
 
+void limpar_tela() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
 
-void scanner_fgets(char *buffer, int tamanho) {
-    if (fgets(buffer, tamanho, stdin) != NULL) {
-        buffer[strcspn(buffer, "\n")] = '\0';
-    } else {
-        buffer[0] = '\0';
-    }
+void limpar_buffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }

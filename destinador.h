@@ -8,44 +8,42 @@ void criar_conta_funcionario();
 void criar_conta_cliente();
 void excluir_conta_funcionario();
 void excluir_conta_cliente();
-void menu_principal();
-int login_cliente(int conta, char *password);
-void scanner_fgets(char *buffer, int tamanho);
-
+void limpar_tela();
+void limpar_buffer();
+void verificar_conta();
 
 
 // structs
 
 typedef struct {
-	int dia,
-		mes,
-		ano;
+	int dia;
+	int mes;
+	int ano;
 } Data;
 
 typedef struct {
-	int cep;
+	char cep[10];
 	char logradouro[100];
 	int n_casa;
 	char bairro[100];
 	char cidade[100];
 	char estado[100];
 
-
-}Endereco;
+} Endereco;
 
 typedef struct{
-	int DDD;
-	int numero;
+	char DDD[4];
+	char numero[10];
 
-}Telefone;
+} Telefone;
 
 typedef struct{
 	char nome[32];
 	char sobrenome[100];
-}Nome;
+} Nome;
 
 typedef struct{
-	int agencia;
+	char agencia[5];
 	int n_conta;
 	float limite;
 	Data vencimento;
@@ -56,4 +54,17 @@ typedef struct{
 	Endereco endereco;
 	char senha[32];
 } Cliente;
+
+
+typedef struct{
+	int codigo;
+	char cargo[100];
+	Nome nome;
+	char cpf[12];
+	Data nascimento;
+	Telefone telefone;
+	Endereco endereco;
+	char senha[32];
+} Funcionario;
+
 #endif

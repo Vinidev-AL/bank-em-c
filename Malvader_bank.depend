@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1716524029 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/excluir_conta.c
+1717282613 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/excluir_conta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destinador.h"
 
-1717272235 /home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/destinador.h
+1717362335 /home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/destinador.h
 
-1717276555 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/criar_conta.cpp
+1717363376 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/criar_conta.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destinador.h"
 	<locale.h>
 
-1716524029 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/main.cpp
+1717278197 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"destinador.h"
@@ -23,21 +23,49 @@
 	<stdio.h>
 	<stdlib.h>
 
-1716761681 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/verificar.cpp
+1717363133 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/verificar.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destinador.h"
 
-1717268753 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/telas.cpp
+1717354151 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/telas.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"destinador.h"
 
-1717267385 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/atalhos.c
+1717363578 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/atalhos.c
 	<stdio.h>
 	<stdlib.h>
 	"destinador.h"
 	<string.h>
+
+1717363971 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/criar_conta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destinador.h"
+	<locale.h>
+
+1717278197 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/main.c
+	<stdio.h>
+	<stdlib.h>
+	"destinador.h"
+
+1716524029 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/style.c
+	<stdio.h>
+	<stdlib.h>
+
+1717354151 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/telas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destinador.h"
+
+1717363398 source:/home/vinicius/Documentos/ESTUDOS/LOGICA/Bank_Malvader/verificar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"destinador.h"
 
