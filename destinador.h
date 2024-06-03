@@ -11,6 +11,8 @@ void excluir_conta_cliente();
 void limpar_tela();
 void limpar_buffer();
 void verificar_conta();
+void remover_nova_linha(char *str);
+
 
 
 // structs
@@ -45,6 +47,7 @@ typedef struct{
 typedef struct{
 	char agencia[5];
 	int n_conta;
+	float saldo;
 	float limite;
 	Data vencimento;
 	Nome nome;
@@ -68,3 +71,4 @@ typedef struct{
 } Funcionario;
 
 #endif
+

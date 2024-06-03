@@ -1,6 +1,6 @@
 [Project]
-FileName=Malvader_bank.dev
-Name=Malvader_bank
+FileName=Bank.dev
+Name=Bank
 Type=1
 Ver=2
 ObjFiles=
@@ -28,8 +28,8 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=6
+CompilerSettings=0000000000000000001000000
+UnitCount=7
 
 [VersionInfo]
 Major=1
@@ -51,16 +51,17 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=contas.txt
+FileName=main.c
+CompileCpp=0
 Folder=
-Compile=0
-Link=0
+Compile=1
+Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=destinador.h
+FileName=telas.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -70,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=main.cpp
+FileName=style.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -80,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=start.cpp
+FileName=criar_conta.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -90,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=stylebank.cpp
+FileName=destinador.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -100,7 +101,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=verify.cpp
+FileName=verificar.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=atalhos.c
 CompileCpp=0
 Folder=
 Compile=1

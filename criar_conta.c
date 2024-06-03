@@ -9,37 +9,22 @@ int contador_funcionario;
 Funcionario conta_funcionario[100];
 
 
-///////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-
-
-
-
-//////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-
-
-void limpar_buffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
-
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 
 //Contador de contas clientes
 
-void carregar_contador(int *contador) {
+void carregar_contador() {
     FILE *arquivo = fopen("contador.bin", "rb");
     if (arquivo != NULL) {
         fread(&contador, sizeof(int), 1, arquivo);
         fclose(arquivo);
     } else {
-        *contador = 0; // Inicializa contador se o arquivo não existir
+        contador = 0; // Inicializa contador se o arquivo n�o existir
     }
 }
 
-void salvar_contador(int contador) {
+void salvar_contador() {
     FILE *arquivo = fopen("contador.bin", "wb");
     if (arquivo != NULL) {
         fwrite(&contador, sizeof(int), 1, arquivo);
@@ -60,7 +45,7 @@ void carregar_contador_funcionario() {
         fread(&contador_funcionario, sizeof(int), 1, arquivo);
         fclose(arquivo);
     } else {
-        contador = 0; // Inicializa contador se o arquivo não existir
+        contador = 0; // Inicializa contador se o arquivo n�o existir
     }
 }
 
@@ -79,17 +64,18 @@ void salvar_contador_funcionario() {
 
 void criar_conta_cliente(){
     Cliente conta;
-    limpar_tela();
-    carregar_contador(&contador);
+    carregar_contador();
     setlocale(LC_ALL, "portuguese");
     contador++;
-    limpar_buffer();
+    
     //-------------------------------------------------------------------------------------------------------------------
+	limpar_buffer();   
     limpar_tela();
-    printf("Digite o número da agência: ");
+    printf("Digite o numero da agencia: ");
     fgets(conta.agencia, sizeof(conta.agencia), stdin);
+    remover_nova_linha(conta.agencia);
     //-------------------------------------------------------------------------------------------------------------------
-    printf("Numero da conta é: %d\n", contador);
+    printf("Numero da conta: %d\n", contador);
     //-------------------------------------------------------------------------------------------------------------------
     printf("Digite o limite da conta: ");
     scanf("%f", &conta.limite);
@@ -99,7 +85,7 @@ void criar_conta_cliente(){
     printf("Dia: ");
     scanf("%d", &conta.vencimento.dia);
     limpar_buffer();
-    printf("Mês: ");
+    printf("Mes: ");
     scanf("%d", &conta.vencimento.mes);
     limpar_buffer();
     printf("Ano - ex 0000: ");
@@ -109,19 +95,21 @@ void criar_conta_cliente(){
 
     printf("Digite seu primeiro nome: ");
     fgets(conta.nome.nome, sizeof(conta.nome.nome), stdin);
+    remover_nova_linha(conta.nome.nome);
     printf("Digite seu sobrenome: ");
     fgets(conta.nome.sobrenome, sizeof(conta.nome.sobrenome), stdin);
+    remover_nova_linha(conta.nome.sobrenome);
     //-------------------------------------------------------------------------------------------------------------------
 
-    printf("Digite seu CPF (só numeros): ");
+    printf("Digite seu CPF (so numeros): ");
     fgets(conta.cpf, sizeof(conta.cpf), stdin);
+    remover_nova_linha(conta.cpf);
     //-------------------------------------------------------------------------------------------------------------------
 
-    printf("Data de nascimento\n\n");
-    printf("Dia: ");
+    printf("Data de nascimento\n\nDia");
     scanf("%d", &conta.nascimento.dia);
     limpar_buffer();
-    printf("Mês: ");
+    printf("Mes: ");
     scanf("%d", &conta.nascimento.mes);
     limpar_buffer();
     printf("Ano - ex 0000: ");
@@ -129,31 +117,38 @@ void criar_conta_cliente(){
     limpar_buffer();
     //-------------------------------------------------------------------------------------------------------------------
 
-    printf("Telefone\n\n");
-    printf("DDD - exemplo 61: ");
+    printf("Telefone\n\nDDD - exemplo 61: ");
     fgets(conta.telefone.DDD, sizeof(conta.telefone.DDD), stdin);
-    printf("Número - exemplo 000000000: ");
+    remover_nova_linha(conta.telefone.DDD);
+    printf("Numero - exemplo 000000000: ");
     fgets(conta.telefone.numero, sizeof(conta.telefone.numero), stdin);
+    remover_nova_linha(conta.telefone.numero);
     //-------------------------------------------------------------------------------------------------------------------
-
-    printf("Endereço\n\n");
-    printf("Digite o CEP (sem pontos e traços): ");
+	limpar_buffer();
+    printf("Endereco\n\nDigite o CEP (sem pontos e tracos): ");
     fgets(conta.endereco.cep, sizeof(conta.endereco.cep), stdin);
+    remover_nova_linha(conta.endereco.cep);
     printf("Digite o logradouro: ");
     fgets(conta.endereco.logradouro, sizeof(conta.endereco.logradouro), stdin);
-    printf("Digite o número da casa: ");
+    remover_nova_linha(conta.endereco.logradouro);
+    printf("Digite o numero da casa: ");
     scanf("%d", &conta.endereco.n_casa);
     limpar_buffer();
     printf("Digite o nome do bairro: ");
     fgets(conta.endereco.bairro, sizeof(conta.endereco.bairro), stdin);
+    remover_nova_linha(conta.endereco.bairro);
     printf("Digite o nome da cidade: ");
     fgets(conta.endereco.cidade, sizeof(conta.endereco.cidade), stdin);
+    remover_nova_linha(conta.endereco.cidade);
     printf("Digite o nome do estado: ");
     fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
+    remover_nova_linha(conta.endereco.estado);
     printf("Crie sua senha: ");
     fgets(conta.senha, sizeof(conta.senha), stdin);
+    remover_nova_linha(conta.senha);
 
     conta.n_conta = contador;
+    conta.saldo = 0;
     //-------------------------------------------------------------------------------------------------------------------
     limpar_tela();
     FILE *file = fopen("contas.bin", "ab");
@@ -164,7 +159,7 @@ void criar_conta_cliente(){
         printf("Erro ao abrir o arquivo para salvar a conta.\n");
     }
 
-    salvar_contador(contador);
+    salvar_contador();
 
     printf("Conta criada com sucesso!!!\n\n");
 }
@@ -183,5 +178,6 @@ void excluir_conta_cliente(){
 void excluir_conta_funcionario(){
 
 }
+
 
 

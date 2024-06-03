@@ -1,17 +1,17 @@
-# Project: Malvader_bank
+# Project: Bank
 # Makefile created by Dev-C++ 5.11
 
-CPP      = g++.exe
-CC       = gcc.exe
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = criar_conta.o excluir_conta.o main.o style.o telas.o verificar.o
-LINKOBJ  = criar_conta.o excluir_conta.o main.o style.o telas.o verificar.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+OBJ      = main.o telas.o style.o criar_conta.o verificar.o atalhos.o
+LINKOBJ  = main.o telas.o style.o criar_conta.o verificar.o atalhos.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Malvader_bank.exe
-CXXFLAGS = $(CXXINCS) 
-CFLAGS   = $(INCS) 
+BIN      = Bank.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,20 +24,20 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-criar_conta.o: criar_conta.cpp
-	$(CC) -c criar_conta.cpp -o criar_conta.o $(CFLAGS)
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
 
-excluir_conta.o: excluir_conta.c
-	$(CC) -c excluir_conta.c -o excluir_conta.o $(CFLAGS)
+telas.o: telas.c
+	$(CC) -c telas.c -o telas.o $(CFLAGS)
 
-main.o: main.cpp
-	$(CC) -c main.cpp -o main.o $(CFLAGS)
+style.o: style.c
+	$(CC) -c style.c -o style.o $(CFLAGS)
 
-style.o: style.cpp
-	$(CC) -c style.cpp -o style.o $(CFLAGS)
+criar_conta.o: criar_conta.c
+	$(CC) -c criar_conta.c -o criar_conta.o $(CFLAGS)
 
-telas.o: telas.cpp
-	$(CC) -c telas.cpp -o telas.o $(CFLAGS)
+verificar.o: verificar.c
+	$(CC) -c verificar.c -o verificar.o $(CFLAGS)
 
-verificar.o: verificar.cpp
-	$(CC) -c verificar.cpp -o verificar.o $(CFLAGS)
+atalhos.o: atalhos.c
+	$(CC) -c atalhos.c -o atalhos.o $(CFLAGS)
