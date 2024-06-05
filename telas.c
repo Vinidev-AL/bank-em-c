@@ -49,13 +49,21 @@ void menu_principal() {
 	int opc;
 	while(1){
 		limpar_tela();
+		style_bank();
         printf("MENU PRINCIPAL\n\n\n");
+        tabela_style();
         printf("Digite a opcao desejada\n\n");
+        tabela_style();
         printf("1 - FUNCIONARIO\n");
+        tabela_style();
         printf("2 - CLIENTE\n");
+        tabela_style();
         printf("3 - SAIR DO PROGRAMA\n\n\n");
+        tabela_style();
         printf("4 - ADMINISTRADOR\n\n");
+        tabela_style();
         printf("Opcao: ");
+        tabela_style();
         scanf("%d", &opc);
         limpar_buffer();
 
@@ -119,6 +127,9 @@ void menu_cliente(int contan){
 		
 		float deposito;
 		float saque;
+		
+		FILE *arqui;
+		arqui = fopen("extratos.txt", "a");
 	
 		switch(opc){
 		case 1:
@@ -133,6 +144,9 @@ void menu_cliente(int contan){
  	 		
  	 		conta.saldo += deposito;
  	 		
+ 	 		fprintf(arqui, "Depositado R$%.2f da conta\n", deposito);
+			fclose(arqui);
+ 	 		
  	 		fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
  	 		fwrite(&conta, sizeof(Cliente), 1, file);
@@ -144,13 +158,18 @@ void menu_cliente(int contan){
 			scanf("%f", &saque);
 			
 			if(saque > conta.saldo)
+			
 			{
 				printf("Saldo insuficiente, seu saldo atual é: %.2f\n\n", conta.saldo);
+				
 				system("pause");
 			} 
 			
 			else
 			{
+				
+				fprintf(arqui, "Sacados R$%.2f da conta do user %s\n", saque, conta.nome);
+				fclose(arqui);
 				conta.saldo -= saque;
 				fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
@@ -165,6 +184,8 @@ void menu_cliente(int contan){
 			break;
 			
 		case 4:
+			system("extratos.xlsx");
+			system("pause");
 			break;
 		case 5:
 			printf("Seu limite atual é: R$%.2f\n\n", conta.limite);

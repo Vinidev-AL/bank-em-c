@@ -13,6 +13,10 @@ void style_bank(){
 			printf(" ########  #####    ##### ####    ##### ####   ####\n\n\t\t\t\t\t\t\t");
 }
 
+void tabela_style(){
+	printf("\t\t\t\t\t\t\t");
+}
+
 
 void logo_bank_malvader(){
 	printf("\n\t\t");

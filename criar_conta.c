@@ -37,6 +37,8 @@ void salvar_contador() {
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
+
+
 //Contador de contas funcionarios
 
 void carregar_contador_funcionario() {
@@ -143,8 +145,10 @@ void criar_conta_cliente(){
     printf("Digite o nome do estado: ");
     fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
     remover_nova_linha(conta.endereco.estado);
+    
     printf("Crie sua senha: ");
     fgets(conta.senha, sizeof(conta.senha), stdin);
+    // fgets(conta.senha, sizeof(), stdin);
     remover_nova_linha(conta.senha);
 
     conta.n_conta = contador;
@@ -152,6 +156,7 @@ void criar_conta_cliente(){
     //-------------------------------------------------------------------------------------------------------------------
     limpar_tela();
     FILE *file = fopen("contas.bin", "ab");
+    
     if (file != NULL) {
         fwrite(&conta, sizeof(Cliente), 1, file);
         fclose(file);
@@ -168,7 +173,8 @@ void criar_conta_cliente(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void criar_conta_funcionario(){
-
+	
+	
 }
 
 void excluir_conta_cliente(){
