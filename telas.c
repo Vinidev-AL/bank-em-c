@@ -49,7 +49,7 @@ void menu_principal() {
 	int opc;
 	while(1){
 		limpar_tela();
-		style_bank();
+		logo_bank_malvader();
         printf("MENU PRINCIPAL\n\n\n");
         tabela_style();
         printf("Digite a opcao desejada\n\n");
