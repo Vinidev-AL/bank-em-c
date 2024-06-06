@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+
+ void alterar_conta(){
+ }
+ void alterar_funcionario(){
+ 	
+ }
+ void alterar_cliente(){
+ 	
+ }
+ 
+
+
+int main{
+	int opcao;
+	
+	do{
+		printf("\nMENU\n:");
+		printf("\n 1 -ALTERAR CONTA\n:");
+		printf("\n 2 -ALTERAR FUNCIONARIO\n:");
+		printf("\n 3 -ALTERAR CLIENTE\n:");
+		printf("\n 4 -VOLTAR\n:");
+		printf("Escolha uma Opcao:");
+		
+		scanf("%d",&opcao);
+		
+		switch(opcao){
+			case 1:
+		    	alterar_Conta();
+			    break; 
+			case 2:
+				alterar_funcionario();
+				break;
+			case 3:
+				alterar_cliente();
+				break;
+			case 4:
+				printf("Saindo...\n");
+				break;
+			default:
+				printf("\n Opcao invalida.Tente novamente:");	
+		} 
+		
+}while(opcao!= 4);
+	return 0;
+}
