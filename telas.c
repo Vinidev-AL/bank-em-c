@@ -11,7 +11,7 @@ void tela_login_funcionario(){
 
 void tela_login_cliente(){
 	
-	verificar_conta();
+	verificar_conta_corrente();
 };
 
 void menu_principal() {
@@ -40,6 +40,7 @@ void menu_principal() {
                 tela_login_funcionario();
                 break;
             case 2:
+            	
                 tela_login_cliente();
                 break;
             case 3:
@@ -52,7 +53,7 @@ void menu_principal() {
 	}
 }
 
-void menu_cliente(int contan){
+void menu_cliente_corrente(int contan){
 	
 	while(1)
 	
@@ -174,6 +175,7 @@ void menu_cliente(int contan){
 
 void menu_funcionario(){
 	int opc;
+	int op;
 	setlocale(LC_ALL, "portuguese");
 	limpar_tela();
 	style_bank();
@@ -196,7 +198,31 @@ void menu_funcionario(){
 
 	switch(opc){
 		case 1:
-			criar_conta_cliente();
+			limpar_tela("cls");
+			style_bank();
+			printf("[1] - CONTA CORRENTE\n");
+			tabela_style();
+			printf("[2] - CONTA POUPANÇA\n");
+			tabela_style();
+			printf("[3] - VOLTAR\n");
+			tabela_style();
+			printf("OPÇÃO: ");
+			scanf("%d", &op);
+			
+			switch(op){
+				case 1:
+					criar_conta_cliente_corrente();	
+					break;
+				case 2:
+					criar_conta_cliente_poupanca();
+					break;
+				case 3:
+					return;
+					break;
+				default:
+					printf("OPÇÃO INVÁLIDA!");
+			}
+
 			break;
 		case 2:
 			break;

@@ -5,16 +5,18 @@
 
 void menu_principal();
 void criar_conta_funcionario();
-void criar_conta_cliente();
+void criar_conta_cliente_corrente();
+void criar_conta_cliente_poupanca();
 void excluir_conta_funcionario();
 void excluir_conta_cliente();
 void limpar_tela();
 void limpar_buffer();
-void verificar_conta();
+void verificar_conta_corrente();
+void verificar_conta_poupanca();
 void remover_nova_linha(char *str);
 void tabela_style();
 void menu_funcionario();
-
+void menu_cliente_corrente(int contan);
 
 
 // structs
