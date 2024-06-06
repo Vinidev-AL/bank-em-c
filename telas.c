@@ -4,8 +4,9 @@
 #include "destinador.h"
 #include <locale.h>
 
-void tela_login_funcionario(){
 
+void tela_login_funcionario(){
+	verificar_conta_funcionario();
 }
 
 void tela_login_cliente(){
@@ -13,40 +14,9 @@ void tela_login_cliente(){
 	verificar_conta();
 };
 
-void tela_administrador(){
-	int opc;
-	limpar_tela();
-	printf("ADMINISTRADOR\n\n\n");
-	printf("1 - Criar conta de funcionario\n");
-	printf("2 - Criar conta de cliente\n");
-	printf("3 - Excluir conta de funcionario\n");
-	printf("4 - Excluir conta de cliente\n");
-	printf("5 - Sair\n");
-	scanf("%d", &opc);
-
-	switch(opc){
-		case 1:
-			criar_conta_funcionario();
-			break;
-		case 2:
-			criar_conta_cliente();
-			break;
-		case 3:
-			excluir_conta_funcionario();
-			break;
-		case 4:
-			excluir_conta_cliente();
-			break;
-		case 5:
-			menu_principal();
-			break;
-	}
-
-}
-
-
 void menu_principal() {
 	int opc;
+	setlocale(LC_ALL, "portuguese");
 	while(1){
 		limpar_tela();
 		logo_bank_malvader();
@@ -54,16 +24,13 @@ void menu_principal() {
         tabela_style();
         printf("Digite a opcao desejada\n\n");
         tabela_style();
-        printf("1 - FUNCIONARIO\n");
+        printf("[1] - FUNCIONARIO\n");
         tabela_style();
-        printf("2 - CLIENTE\n");
+        printf("[2] - CLIENTE\n");
         tabela_style();
-        printf("3 - SAIR DO PROGRAMA\n\n\n");
-        tabela_style();
-        printf("4 - ADMINISTRADOR\n\n");
+        printf("[3] - SAIR DO PROGRAMA\n\n\n");
         tabela_style();
         printf("Opcao: ");
-        tabela_style();
         scanf("%d", &opc);
         limpar_buffer();
 
@@ -78,9 +45,6 @@ void menu_principal() {
             case 3:
                 exit(0);
                 break;
-            case 4:
-                tela_administrador();
-                break;
             default:
                 printf("Opcao invalida");
                 break;
@@ -94,6 +58,7 @@ void menu_cliente(int contan){
 	
 	{
 		limpar_tela();
+		style_bank();
 		setlocale(LC_ALL, "portuguese");
 	
 		FILE *file = fopen("contas.bin", "r+b");
@@ -203,6 +168,52 @@ void menu_cliente(int contan){
 			system("pause");
 		}
 		
+	}
+}
+
+
+void menu_funcionario(){
+	int opc;
+	setlocale(LC_ALL, "portuguese");
+	limpar_tela();
+	style_bank();
+	printf("[1] - Abertura de conta\n");
+	tabela_style();
+	printf("[2] - Encerramento de conta\n");
+	tabela_style();
+	printf("[3] - Consultar dados\n");
+	tabela_style();
+	printf("[4] - Alterar dados\n");
+	tabela_style();
+	printf("[5] - Cadastro de funcionarios\n");
+	tabela_style();
+	printf("[6] - Gerar relatorios\n");
+	tabela_style();
+	printf("[7] - Sair\n");
+	tabela_style();
+	printf("Opção: ");
+	scanf("%d", &opc);
+
+	switch(opc){
+		case 1:
+			criar_conta_cliente();
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			criar_conta_funcionario();
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		default:
+			printf("Opção inválida!\n");
+			system("pause");
 	}
 }
 

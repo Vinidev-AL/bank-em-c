@@ -13,6 +13,7 @@ void limpar_buffer();
 void verificar_conta();
 void remover_nova_linha(char *str);
 void tabela_style();
+void menu_funcionario();
 
 
 
