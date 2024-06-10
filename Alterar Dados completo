@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int validar_senha_adm();
+void alterar_conta();
+void alterar_funcionario();
+void alterar_cliente();
+
+int main() {
+    int opcao;
+
+    
+    if (!validar_senha_adm()) {
+        printf("Senha incorreta. Acesso negado.\n");
+        return 1;
+    }
+
+    do {
+        printf("\nMENU:\n");
+        printf("1 - ALTERAR CONTA\n");
+        printf("2 - ALTERAR FUNCIONARIO\n");
+        printf("3 - ALTERAR CLIENTE\n");
+        printf("4 - VOLTAR\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                alterar_conta();
+                break;
+            case 2:
+                alterar_funcionario();
+                break;
+            case 3:
+                alterar_cliente();
+                break;
+            case 4:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+        }
+    } while (opcao != 4);
+
+    return 0;
+}
+
+int validar_senha_adm() {
+    char senha[20];
+    printf("DIGITE A SENHA DE ADM (GERENTE): ");
+    scanf("%s", senha);
+    return strcmp(senha, "1234") ==0;  
+}
+
+void alterar_conta() {
+    int tipo_conta;
+    float limite_disponivel;
+    char data_vencimento[11];
+
+    printf("ALTERAR CONTA:\n");
+    printf("TIPO DE CONTA (1 - Corrente, 2 - Poupanca): ");
+    scanf("%d", &tipo_conta);
+    printf("LIMITE DISPONIVEL: ");
+    scanf("%f", &limite_disponivel);
+    printf("DATA DE VENCIMENTO (DD/MM/AAAA): ");
+    scanf("%s", data_vencimento);
+
+
+    printf("Conta atualizada com sucesso!\n");
+}
+
+void alterar_funcionario() {
+    int codigo_funcionario;
+    char cargo[50];
+    char telefone[15];
+    char endereco[100];
+    int numero_casa;
+    char cep[10];
+    char bairro[50];
+    char cidade[50];
+    char estado[3];
+
+    printf("ALTERAR FUNCIONARIO:\n");
+    printf("CODIGO FUNCIONARIO: ");
+    scanf("%d", &codigo_funcionario);
+    printf("CARGO: ");
+    scanf("%s", cargo);
+    printf("TELEFONE: ");
+    scanf("%s", telefone);
+    printf("LOCAL (ENDERECO): ");
+    scanf("%s", endereco);
+    printf("N DA CASA: ");
+    scanf("%d", &numero_casa);
+    printf("CEP: ");
+    scanf("%s", cep);
+    printf("BAIRRO: ");
+    scanf("%s", bairro);
+    printf("CIDADE: ");
+    scanf("%s", cidade);
+    printf("ESTADO: ");
+    scanf("%s", estado);
+
+    printf("Funcionario atualizado com sucesso!\n");
+}
+
+void alterar_cliente() {
+    char telefone[15];
+    char endereco[100];
+    int numero_casa;
+    char cep[10];
+    char bairro[50];
+    char cidade[50];
+    char estado[3];
+
+    printf("ALTERAR CLIENTE:\n");
+    printf("TELEFONE: ");
+    scanf("%s", telefone);
+    printf("LOCAL (ENDERECO): ");
+    scanf("%s", endereco);
+    printf("N DA CASA: ");
+    scanf("%d", &numero_casa);
+    printf("CEP: ");
+    scanf("%s", cep);
+    printf("BAIRRO: ");
+    scanf("%s", bairro);
+    printf("CIDADE: ");
+    scanf("%s", cidade);
+    printf("ESTADO: ");
+    scanf("%s", estado);
+
+    printf("Cliente atualizado com sucesso!\n");
+    
+   
+}
+    
