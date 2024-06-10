@@ -17,6 +17,10 @@ void remover_nova_linha(char *str);
 void tabela_style();
 void menu_funcionario();
 void menu_cliente_corrente(int contan);
+void style_icon();
+void delay();
+void carregar();
+void malvader();
 
 
 // structs

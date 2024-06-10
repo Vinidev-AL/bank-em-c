@@ -14,12 +14,17 @@ void tela_login_cliente(){
 	verificar_conta_corrente();
 };
 
-void menu_principal() {
+void menu_principal(int *vef_estilo) {
 	int opc;
 	setlocale(LC_ALL, "portuguese");
 	while(1){
 		limpar_tela();
-		logo_bank_malvader();
+		if(vef_estilo == 0){
+		   system("pause");
+		}
+		
+		vef_estilo = 1;
+		malvader();
         printf("MENU PRINCIPAL\n\n\n");
         tabela_style();
         printf("Digite a opcao desejada\n\n");
@@ -34,7 +39,7 @@ void menu_principal() {
         scanf("%d", &opc);
         limpar_buffer();
 
-
+		delay();
         switch(opc){
             case 1:
                 tela_login_funcionario();

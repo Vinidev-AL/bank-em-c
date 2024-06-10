@@ -217,14 +217,24 @@ void verificar_conta_funcionario(){
         }
        
         else
-        {
-            printf("Falha ao logar, senha ou cpf incorretos");  
+        {	
+        	printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();
         }
     }
 
     else
     {
-        printf("Falha ao logar, senha ou cpf incorretos");
+         	printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();
     }
 
  
