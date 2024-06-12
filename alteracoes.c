@@ -59,8 +59,8 @@ void alterar_dados_funcionario() {
 	        printf("ERRO, ARQUIVO NÃO EXISTE\n");
 	        return;
 	    }
-	    Cliente conta;   
-	    fseek(file, (contan - 1) * sizeof(Funcionario), SEEK_SET);
+	
+	    fseek(file, (codigo_funcionario - 1) * sizeof(Funcionario), SEEK_SET);
 	
 	    if (fread(&conta, sizeof(Funcionario), 1, file) != 1) {
 	        if (feof(file)) {
@@ -84,12 +84,15 @@ void alterar_dados_funcionario() {
 
 	}
     
-}
+
 
 void alterar_conta_corrente(){
 	int opc;
 	int opc_case1;
- 	Funcionario conta;
+	int contan;
+	int contador_conta_corrente;
+ 	Cliente conta;
+
  	printf("DIGITE A OPCAO QUE DESEJA ALTERAR  \n");
  	printf("[1] - TIPO DE CONTA\n");
 	printf("[2] - LIMITE\n");
@@ -97,9 +100,37 @@ void alterar_conta_corrente(){
 	printf("[4] - VOLTAR\n");	
  	scanf("%d", &opc);
 		
+ 	printf("DIGITE O NUMERO DA CONTA: ");
+ 	scanf("%d", &contan);
+ 	
+ 	 FILE *file = fopen("contas_corrente.bin", "rb");
+    if (file == NULL) {
+    	tabela_style();
+        printf("ERRO, ARQUIVO NÃO EXISTE\n");
+        return;
+    }
+    
+    fseek(file, (contan - 1) * sizeof(Cliente), SEEK_SET);
+
+    if (fread(&conta, sizeof(Cliente), 1, file) != 1) {
+        if (feof(file)) {
+        	tabela_style();
+            printf("ERRO, CONTA NÃO ENCONTRADA\n");
+        } else {
+        	tabela_style();
+            printf("ERRO AO LER A CONTA\n");
+        }
+        fclose(file);
+        return;
+    }
+
+    fclose(file);
+    
  	
    switch(opc){
-   	case 1:
+   	
+   	
+   	case 1:	
    	 	printf("DESEJA REALMENTE ALTERAR A CONTA PARA POUPANCA?");
    	 	printf("[1] - SIM\n");
 		printf("[2] - NAO\n");
@@ -107,51 +138,27 @@ void alterar_conta_corrente(){
 		
 		switch(opc_case1){
 			case 1:
+				carregar_contador_conta_poupanca();
+				contador_conta_corrente++;
+				    FILE *file = fopen("contas_poupanca.bin", "ab");
+    
+			    if (file != NULL) {
+			        fwrite(&conta, sizeof(Cliente), 1, file);
+			        fclose(file);
+			    } else {
+			        printf("Erro ao abrir o arquivo para salvar a conta.\n");
+			    }
+
+    			salvar_contador_conta_poupanca();
+
+    			printf("Conta criada com sucesso!!!\n\n");
+				}
 				break;
-			case 
+			case 2:
+				printf("OK retornar");
+				break;
 		}
-   }
-    
-   
-    
- 
-    printf("Número - exemplo 000000000: ");
-    fgets(conta.telefone.numero, sizeof(conta.telefone.numero), stdin);
-    remover_nova_linha(conta.telefone.numero);
-    fflush(stdin);
-    //-------------------------------------------------------------------------------------------------------------------
-    
-    printf("Digite a nova senha do funcionário: ");
-    fgets(conta.senha, sizeof(conta.senha), stdin);
-    
-    	FILE *file = fopen("contas_funcionario.bin", "r+b");
-	    if (file == NULL) {
-	        printf("ERRO, ARQUIVO NÃO EXISTE\n");
-	        return;
-	    }
-	    
-	    Cliente conta;   
-	    fseek(file, (contan - 1) * sizeof(Funcionario), SEEK_SET);
-	
-	    if (fread(&conta, sizeof(Funcionario), 1, file) != 1) {
-	        if (feof(file)) {
-	            printf("ERRO, CONTA NÃO ENCONTRADA\n");
-	        } else {
-	            printf("ERRO AO LER A CONTA\n");
-	        }
-	        fclose(file);
-	        return;
-	    }
-	    
-	    if (fwrite(&conta, sizeof(Funcionario), 1, file) != 1) {
-        printf("Erro ao atualizar dados!\n");
-        fclose(file);
-    	} else {
-    		printf("Dados alterados com sucesso!!!");
-		}
-
-    fclose(file);
+   	}  
 
 
-	}
-}
+
