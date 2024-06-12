@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o telas.o style.o criar_conta.o verificar.o atalhos.o
-LINKOBJ  = main.o telas.o style.o criar_conta.o verificar.o atalhos.o
+OBJ      = main.o telas.o estilos.o criacao_de_contas.o verificacoes.o atalhos.o encerramentos_de_contas.o consultas.o
+LINKOBJ  = main.o telas.o estilos.o criacao_de_contas.o verificacoes.o atalhos.o encerramentos_de_contas.o consultas.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -30,14 +30,20 @@ main.o: main.c
 telas.o: telas.c
 	$(CC) -c telas.c -o telas.o $(CFLAGS)
 
-style.o: style.c
-	$(CC) -c style.c -o style.o $(CFLAGS)
+estilos.o: estilos.c
+	$(CC) -c estilos.c -o estilos.o $(CFLAGS)
 
-criar_conta.o: criar_conta.c
-	$(CC) -c criar_conta.c -o criar_conta.o $(CFLAGS)
+criacao_de_contas.o: criacao_de_contas.c
+	$(CC) -c criacao_de_contas.c -o criacao_de_contas.o $(CFLAGS)
 
-verificar.o: verificar.c
-	$(CC) -c verificar.c -o verificar.o $(CFLAGS)
+verificacoes.o: verificacoes.c
+	$(CC) -c verificacoes.c -o verificacoes.o $(CFLAGS)
 
 atalhos.o: atalhos.c
 	$(CC) -c atalhos.c -o atalhos.o $(CFLAGS)
+
+encerramentos_de_contas.o: encerramentos_de_contas.c
+	$(CC) -c encerramentos_de_contas.c -o encerramentos_de_contas.o $(CFLAGS)
+
+consultas.o: consultas.c
+	$(CC) -c consultas.c -o consultas.o $(CFLAGS)

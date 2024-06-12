@@ -10,13 +10,15 @@ void verificar_conta_corrente(){
   	char conta_cpf[12];
   	char conta_senha[32];
   	limpar_tela();
-  	
+  	style_bank();
     printf("Digite o número da sua conta: ");
     scanf("%d", &contan);
     
+    tabela_style();
     printf("Digite o seu CPF: ");
     scanf("%s", conta_cpf);
     
+    tabela_style();
     printf("Digite a sua senha: ");
     scanf("%s", conta_senha);
     
@@ -24,6 +26,7 @@ void verificar_conta_corrente(){
 
     FILE *file = fopen("contas_corrente.bin", "rb");
     if (file == NULL) {
+    	tabela_style();
         printf("ERRO, ARQUIVO NÃO EXISTE\n");
         return;
     }
@@ -36,8 +39,10 @@ void verificar_conta_corrente(){
 
     if (fread(&conta, sizeof(Cliente), 1, file) != 1) {
         if (feof(file)) {
+        	tabela_style();
             printf("ERRO, CONTA NÃO ENCONTRADA\n");
         } else {
+        	tabela_style();
             printf("ERRO AO LER A CONTA\n");
         }
         fclose(file);
@@ -65,13 +70,23 @@ void verificar_conta_corrente(){
  	   
  	    else
         {
- 	   		printf("Falha ao logar, senha ou cpf incorretos");	
+      		printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();		
 		}
     }
 
     else
     {
-        printf("Falha ao logar, senha ou cpf incorretos");
+    		printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();	
     }
 
  
@@ -87,12 +102,15 @@ void verificar_conta_poupanca(){
   	char conta_senha[32];
   	limpar_tela();
   	
+  	style_bank();
     printf("Digite o número da sua conta: ");
     scanf("%d", &contan);
     
+    tabela_style();
     printf("Digite o seu CPF: ");
     scanf("%s", conta_cpf);
     
+    tabela_style();
     printf("Digite a sua senha: ");
     scanf("%s", conta_senha);
     
@@ -112,8 +130,10 @@ void verificar_conta_poupanca(){
 
     if (fread(&conta, sizeof(Cliente), 1, file) != 1) {
         if (feof(file)) {
+        	tabela_style();
             printf("ERRO, CONTA NÃO ENCONTRADA\n");
         } else {
+        	tabela_style();
             printf("ERRO AO LER A CONTA\n");
         }
         fclose(file);
@@ -134,19 +154,29 @@ void verificar_conta_poupanca(){
     	
     	if (strcmp(conta_senha, conta.senha) == 0)
 		{
-            limpar_tela();
             printf("Login realizado!\n\n");
+            menu_cliente_poupanca(contan);
 		}
  	   
  	    else
         {
- 	   		printf("Falha ao logar, senha ou cpf incorretos");	
+        	printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();	
 		}
     }
 
     else
     {
-        printf("Falha ao logar, senha ou cpf incorretos");
+    		printf("\033[31m");
+        	printf("\n");
+        	tabela_style();
+            printf("Falha ao logar, senha ou cpf incorretos\n");  
+            printf("\033[0m");
+            tabela_style();
     }
 
  
@@ -189,8 +219,10 @@ void verificar_conta_funcionario(){
 
     if (fread(&conta, sizeof(Funcionario), 1, file) != 1) {
         if (feof(file)) {
+        	tabela_style();
             printf("ERRO, CONTA NÃO ENCONTRADA\n");
         } else {
+        	tabela_style();
             printf("ERRO AO LER A CONTA\n");
         }
         fclose(file);

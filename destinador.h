@@ -17,10 +17,17 @@ void remover_nova_linha(char *str);
 void tabela_style();
 void menu_funcionario();
 void menu_cliente_corrente(int contan);
+void menu_cliente_poupanca(int contan);
 void style_icon();
 void delay();
 void carregar();
 void malvader();
+void encerrar_conta_funcionario();
+void encerrar_conta_corrente();
+void encerrar_conta_poupanca();
+void consultar_funcionario();
+void consultar_conta_corrente();
+void consultar_conta_poupanca();
 
 
 // structs

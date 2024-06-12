@@ -104,7 +104,7 @@ void criar_conta_cliente_corrente(){
     remover_nova_linha(conta.agencia);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
-    printf("Numero da conta: %d\n", contador_funcionario);
+    printf("Numero da conta: %d\n", contador_conta_corrente);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
     printf("Digite o limite da conta: ");
@@ -240,7 +240,7 @@ void criar_conta_cliente_poupanca(){
     remover_nova_linha(conta.agencia);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
-    printf("Numero da conta: %d\n", contador_conta_corrente);
+    printf("Numero da conta: %d\n", contador_conta_poupanca);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
     printf("Digite seu primeiro nome: ");
