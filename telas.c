@@ -345,6 +345,7 @@ void menu_funcionario(){
 		int opc_encerrar;
 		int pass;
 		int adm = 123456;
+		int opc_case4;
 		setlocale(LC_ALL, "portuguese");
 		limpar_tela();
 		style_bank();
@@ -444,6 +445,22 @@ void menu_funcionario(){
 			case 3:
 				break;
 			case 4:
+				printf("DIGITE A OPCAO DESEJADA\n\n");
+				printf("1 - CONTA CORRENTE\n");
+				printf("2 - CONTA POUPANCA\n");
+				printf("3 - VOLTAR\n");
+				printf("OPCAO: ");
+				scanf("%d", &opc_case4);
+				
+				switch(opc_case4){
+					case 1:
+						alterar_conta_corrente();
+						break;
+					case 2:
+						alterar_conta_poupanca();
+						break;
+				}
+				
 				break;
 			case 5:
 				criar_conta_funcionario();

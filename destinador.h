@@ -28,6 +28,8 @@ void encerrar_conta_poupanca();
 void consultar_funcionario();
 void consultar_conta_corrente();
 void consultar_conta_poupanca();
+void alterar_conta_corrente();
+void alterar_conta_poupanca();
 
 
 // structs
