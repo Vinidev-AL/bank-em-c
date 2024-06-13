@@ -30,6 +30,8 @@ void consultar_conta_corrente();
 void consultar_conta_poupanca();
 void alterar_conta_corrente();
 void alterar_conta_poupanca();
+void salvar_contador_conta_poupanca_alt();
+void carregar_contador_conta_poupanca_alt();
 
 
 // structs

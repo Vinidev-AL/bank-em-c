@@ -122,8 +122,24 @@ void encerrar_conta_corrente(){
         fclose(file);
     }
 
-    fclose(file);
+   FILE *aq = fopen("contas_corrente.bin", "rb");
+	    if (aq == NULL) {
+	        printf("ERRO, ARQUIVO NAO EXISTE\n");
+	        return;
+	    }
+    
+	fseek(aq, (contan - 1) * sizeof(Cliente), SEEK_SET);
+	
+	    if (fread(&conta, sizeof(Cliente), 1, aq) != 1) {
+	        if (feof(aq)) {
+	            printf("ERRO, CONTA NAO ENCONTRADA\n");
+	        } else {
+	            printf("ERRO AO LER A CONTA\n");
+	        }
+	        fclose(aq);
+	    }
 
+ fclose(file);
     if (conta.n_conta == 0) {
         printf("Conta encerrada com sucesso!\n\n");
         system("pause");

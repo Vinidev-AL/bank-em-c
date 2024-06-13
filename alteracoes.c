@@ -4,6 +4,32 @@
 #include <locale.h>
 #include "destinador.h"
 
+int contador_conta_poupanca;
+
+void carregar_contador_conta_poupanca_alt() {
+    FILE *arquivo = fopen("contador_conta_poupanca.bin", "rb");
+    if (arquivo != NULL) {
+        fread(&contador_conta_poupanca, sizeof(int), 1, arquivo);
+        fclose(arquivo);
+    } else {
+        contador_conta_poupanca = 0; // Inicializa contador se o arquivo não existir
+    }
+}
+
+void salvar_contador_conta_poupanca_alt() {
+    FILE *arquivo = fopen("contador_conta_poupanca.bin", "wb");
+    if (arquivo != NULL) {
+        fwrite(&contador_conta_poupanca, sizeof(int), 1, arquivo);
+        fclose(arquivo);
+    } else {
+        printf("Erro ao abrir o arquivo para salvar o contador.\n");
+    }
+}
+
+
+
+
+
 
 void alterar_dados_funcionario() {
  	int codigo_funcionario;
@@ -90,7 +116,8 @@ void alterar_conta_corrente(){
 	int opc;
 	int opc_case1;
 	int contan;
-	int contador_conta_corrente;
+
+	
  	Cliente conta;
 
  	printf("DIGITE A OPCAO QUE DESEJA ALTERAR  \n");
@@ -103,7 +130,7 @@ void alterar_conta_corrente(){
  	printf("DIGITE O NUMERO DA CONTA: ");
  	scanf("%d", &contan);
  	
- 	 FILE *file = fopen("contas_corrente.bin", "rb");
+ 	FILE *file = fopen("contas_corrente.bin", "r+b");
     if (file == NULL) {
     	tabela_style();
         printf("ERRO, ARQUIVO NÃO EXISTE\n");
@@ -124,8 +151,7 @@ void alterar_conta_corrente(){
         return;
     }
 
-    fclose(file);
-    
+ 
  	
    switch(opc){
    	
@@ -137,28 +163,71 @@ void alterar_conta_corrente(){
 		scanf("%d", &opc_case1);
 		
 		switch(opc_case1){
+			
 			case 1:
-				carregar_contador_conta_poupanca();
-				contador_conta_corrente++;
-				    FILE *file = fopen("contas_poupanca.bin", "ab");
+				carregar_contador_conta_poupanca_alt();
+				contador_conta_poupanca++;
+				FILE *arquivo_poup = fopen("contas_poupanca.bin", "ab");
     
-			    if (file != NULL) {
-			        fwrite(&conta, sizeof(Cliente), 1, file);
-			        fclose(file);
+			    if (arquivo_poup != NULL) {
+			        fwrite(&conta, sizeof(Cliente), 1, arquivo_poup);
+			        fclose(arquivo_poup);
 			    } else {
 			        printf("Erro ao abrir o arquivo para salvar a conta.\n");
 			    }
 
-    			salvar_contador_conta_poupanca();
+    			salvar_contador_conta_poupanca_alt();
 
-    			printf("Conta criada com sucesso!!!\n\n");
+    			printf("Conta movida com sucesso!!!\n\n");
 				}
+				
+				printf("Conta poupanca movida, o numero da sua conta e: %d\n\n", contador_conta_poupanca);
+				
+				system("pause");
+			
+		
+	
+					strcpy(conta.agencia, "");
+					conta.n_conta = 0;
+					conta.saldo = 0.0;
+					conta.limite = 0.0;
+					conta.vencimento.dia = 0;
+					conta.vencimento.mes = 0;
+					conta.vencimento.ano = 0;
+					strcpy(conta.nome.nome, "");
+					strcpy(conta.nome.sobrenome, "");
+					strcpy(conta.cpf , "");
+					conta.nascimento.dia = 0;
+					conta.nascimento.mes = 0;
+					conta.nascimento.ano = 0;
+					strcpy(conta.telefone.DDD, "");
+					strcpy(conta.telefone.numero, "");
+					strcpy(conta.endereco.cep, "");
+					strcpy(conta.endereco.logradouro ,"");
+					conta.endereco.n_casa = 0;
+					strcpy(conta.endereco.bairro, "");
+					strcpy(conta.endereco.cidade, "");
+					strcpy(conta.endereco.estado, "");
+					strcpy(conta.senha, "");
+			
+					fseek(file, (contan - 1) * sizeof(Cliente), SEEK_SET);
+			
+			    	if (fwrite(&conta, sizeof(Cliente), 1, file) != 1) {
+			    	system("pause");
+			        printf("Erro ao zerar conta corrente!\n");
+			        fclose(file);
+			    	}
+					
 				break;
+					
 			case 2:
 				printf("OK retornar");
 				break;
 		}
-   	}  
+			
+}  
 
+
+void alterar_conta_poupanca(){}
 
 

@@ -70,23 +70,45 @@ void verificar_conta_corrente(){
  	   
  	    else
         {
-      		printf("\033[31m");
-        	printf("\n");
-        	tabela_style();
-            printf("Falha ao logar, senha ou cpf incorretos\n");  
-            printf("\033[0m");
-            tabela_style();		
+        	
+        	if(conta.n_conta == 0){
+        		printf("\033[31m");
+	        	printf("\n");
+	        	tabela_style();
+	            printf("Essa conta não existe\n");  
+	            printf("\033[0m");
+	            tabela_style();	
+			} else {
+				printf("\033[31m");
+	        	printf("\n");
+	        	tabela_style();
+	            printf("Falha ao logar, senha ou cpf incorretos\n");  
+	            printf("\033[0m");
+	            tabela_style();	
+			}
+			
+      		
 		}
     }
 
     else
     {
-    		printf("\033[31m");
-        	printf("\n");
-        	tabela_style();
-            printf("Falha ao logar, senha ou cpf incorretos\n");  
-            printf("\033[0m");
-            tabela_style();	
+    		if(conta.n_conta == 0){
+        		printf("\033[31m");
+	        	printf("\n");
+	        	tabela_style();
+	            printf("Essa conta não existe\n");  
+	            printf("\033[0m");
+	            tabela_style();	
+			} else {
+				printf("\033[31m");
+	        	printf("\n");
+	        	tabela_style();
+	            printf("Falha ao logar, senha ou cpf incorretos\n");  
+	            printf("\033[0m");
+	            tabela_style();	
+			}
+			
     }
 
  
