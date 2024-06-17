@@ -22,3 +22,14 @@ void remover_nova_linha(char *str) {
         str[len - 1] = '\0';
     }
 }
+
+void removeEspacos(char *str) {
+    int i, j;
+    int n = strlen(str);
+    for (i = 0, j = 0; i < n; i++) {
+        if (str[i] != ' ') {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0';
+}

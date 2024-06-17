@@ -31,6 +31,10 @@ void style_bank(){
 			printf("\033[0m");
 }
 
+void quebrar_linha(){
+	printf("\n\n");
+}
+
 
 void tabela_style(){
 	printf("\t\t\t\t\t\t\t");

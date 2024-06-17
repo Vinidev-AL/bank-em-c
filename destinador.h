@@ -7,8 +7,6 @@ void menu_principal();
 void criar_conta_funcionario();
 void criar_conta_cliente_corrente();
 void criar_conta_cliente_poupanca();
-void excluir_conta_funcionario();
-void excluir_conta_cliente();
 void limpar_tela();
 void limpar_buffer();
 void verificar_conta_corrente();
@@ -33,6 +31,8 @@ void alterar_conta_poupanca();
 void salvar_contador_conta_poupanca_alt();
 void carregar_contador_conta_poupanca_alt();
 void quebrar_linha();
+void consultar_cliente();
+void removeEspacos(char *str);
 
 
 // structs

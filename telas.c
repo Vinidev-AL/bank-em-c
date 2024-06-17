@@ -148,7 +148,7 @@ void menu_cliente_corrente(int contan){
  	 		
  	 		conta.saldo += deposito;
  	 		tabela_style();
- 	 		fprintf(arqui, "Depositado R$%.2f da conta\n", deposito);
+ 	 		fprintf(arqui, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
 			fclose(arqui);
  	 		
  	 		fseek(file, -sizeof(Cliente), SEEK_CUR);
@@ -166,7 +166,7 @@ void menu_cliente_corrente(int contan){
 			
 			{
 				tabela_style();
-				printf("Saldo insuficiente, seu saldo atual é: %.2f\n\n", conta.saldo);
+				printf("Saldo insuficiente, seu saldo atual e: %.2f\n\n", conta.saldo);
 				tabela_style();
 				system("pause");
 			} 
@@ -174,7 +174,7 @@ void menu_cliente_corrente(int contan){
 			else
 			{
 				tabela_style();
-				fprintf(arqui, "Sacados R$%.2f da conta do user %s\n", saque, conta.nome);
+				fprintf(arqui, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
 				fclose(arqui);
 				conta.saldo -= saque;
 				fseek(file, -sizeof(Cliente), SEEK_CUR);
@@ -280,7 +280,7 @@ void menu_cliente_poupanca(int contan){
  	 		
  	 		conta.saldo += deposito;
  	 		
- 	 		fprintf(arqui, "Depositado R$%.2f da conta\n", deposito);
+			fprintf(arqui, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
 			fclose(arqui);
  	 		
  	 		fseek(file, -sizeof(Cliente), SEEK_CUR);
@@ -304,7 +304,7 @@ void menu_cliente_poupanca(int contan){
 			else
 			{
 				
-				fprintf(arqui, "Sacados R$%.2f da conta do user %s\n", saque, conta.nome);
+				fprintf(arqui, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
 				fclose(arqui);
 				conta.saldo -= saque;
 				fseek(file, -sizeof(Cliente), SEEK_CUR);
@@ -345,7 +345,10 @@ void menu_funcionario(){
 		int opc_encerrar;
 		int pass;
 		int adm = 123456;
+		int opc_case3;
 		int opc_case4;
+		int opc_case3_switch;
+
 		setlocale(LC_ALL, "portuguese");
 		limpar_tela();
 		style_bank();
@@ -372,11 +375,11 @@ void menu_funcionario(){
 				style_bank();
 				printf("[1] - CONTA CORRENTE\n");
 				tabela_style();
-				printf("[2] - CONTA POUPANÇA\n");
+				printf("[2] - CONTA POUPANCA\n");
 				tabela_style();
 				printf("[3] - VOLTAR\n");
 				tabela_style();
-				printf("OPÇÃO: ");
+				printf("OPCAO: ");
 				scanf("%d", &op);
 				
 				switch(op){
@@ -443,6 +446,78 @@ void menu_funcionario(){
 
 				break;
 			case 3:
+				limpar_tela();
+				style_bank();
+				printf("DIGITE A OPCAO DESEJADA\n\n");
+				tabela_style();
+				printf("1 - CONSULTAR CONTA\n");
+				tabela_style();
+				printf("2 - CONSULTAR CLIENTE\n");
+				tabela_style();
+				printf("3 - CONSULTAR FUNCIONARIO\n");
+				tabela_style();
+				printf("4 - VOLTAR\n");
+				tabela_style();
+			
+				printf("OPCAO: ");
+				scanf("%d", &opc_case3);
+
+				switch(opc_case3){
+				case 1:
+					quebrar_linha();
+					tabela_style();
+					printf("QUAL O TIPO DE CONTA?\n\n");
+					tabela_style();
+					printf("[1] - CORRENTE\n");
+					tabela_style();
+					printf("[2] - POUPANCA\n");
+					tabela_style();
+					printf("[3] - VOLTAR\n");
+					tabela_style();
+					printf("OPCAO: ");
+					scanf("%d", &opc_case3_switch);
+
+					switch(opc_case3_switch){
+					case 1:
+						consultar_conta_corrente();
+						break;
+					case 2:
+						consultar_conta_poupanca();
+						break;
+					case 3:
+						tabela_style();
+						printf("Voltando...\n");
+						tabela_style();
+						system("pause");
+						break;
+					default:
+						tabela_style();
+						printf("Opcao invalida!\n");
+						tabela_style();
+						system("pause");
+						break;
+					}
+					break;
+				case 2:
+					consultar_cliente();
+					break;
+				case 3:
+					consultar_funcionario();
+					break;
+				case 4:
+					tabela_style();
+					printf("Voltando...\n");
+					tabela_style();
+					system("pause");
+					break;
+				default:
+					tabela_style();
+					printf("OPCAO INVALIDA\n");
+					tabela_style();
+					system("pause");
+					break;
+				}
+
 				break;
 			case 4:
 				limpar_tela();
@@ -490,6 +565,10 @@ void menu_funcionario(){
 				criar_conta_funcionario();
 				break;
 			case 6:
+				tabela_style();
+				printf("Gerando relatorios...");
+				sleep(1);
+				system("extratos.xlsx");
 				break;
 			case 7:
 				return;

@@ -175,7 +175,7 @@ void alterar_conta_corrente(){
 	tabela_style();
 	printf("[4] - ALTERAR CLIENTE\n");
 	tabela_style();
-	printf("[5] - VOLTAR");
+	printf("[5] - VOLTAR\n");
 	tabela_style();
 	printf("OPCAO: ");	
  	scanf("%d", &opc);
