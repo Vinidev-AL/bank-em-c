@@ -445,10 +445,19 @@ void menu_funcionario(){
 			case 3:
 				break;
 			case 4:
+				limpar_tela();
+				style_bank();
 				printf("DIGITE A OPCAO DESEJADA\n\n");
+				tabela_style();
 				printf("1 - CONTA CORRENTE\n");
+				tabela_style();
 				printf("2 - CONTA POUPANCA\n");
-				printf("3 - VOLTAR\n");
+				tabela_style();
+				printf("3 - ALTERAR FUNCIONARIO\n");
+				tabela_style();
+				printf("4 - VOLTAR\n");
+				tabela_style();
+			
 				printf("OPCAO: ");
 				scanf("%d", &opc_case4);
 				
@@ -458,6 +467,21 @@ void menu_funcionario(){
 						break;
 					case 2:
 						alterar_conta_poupanca();
+						break;
+					case 3:
+						alterar_dados_funcionario();
+						break;
+					case 4:
+						tabela_style();
+						printf("Voltando...");
+						tabela_style();
+						system("pause");
+						break;
+					default:
+						tabela_style();
+						printf("Opcao invalida!\n");
+						tabela_style();
+						system("pause");
 						break;
 				}
 				

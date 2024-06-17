@@ -102,6 +102,7 @@ void criar_conta_cliente_corrente(){
     printf("Digite a agência: ");
     fgets(conta.agencia, sizeof(conta.agencia), stdin);
     remover_nova_linha(conta.agencia);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
     printf("Numero da conta: %d\n", contador_conta_corrente);
@@ -131,16 +132,19 @@ void criar_conta_cliente_corrente(){
     printf("Digite seu primeiro nome: ");
     fgets(conta.nome.nome, sizeof(conta.nome.nome), stdin);
     remover_nova_linha(conta.nome.nome);
+    fflush(stdin);
     tabela_style();
     printf("Digite seu sobrenome: ");
     fgets(conta.nome.sobrenome, sizeof(conta.nome.sobrenome), stdin);
     remover_nova_linha(conta.nome.sobrenome);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
 
     printf("Digite seu CPF (so numeros): ");
     fgets(conta.cpf, sizeof(conta.cpf), stdin);
     remover_nova_linha(conta.cpf);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
 
@@ -166,22 +170,26 @@ void criar_conta_cliente_corrente(){
     printf("DDD - exemplo 61: ");
     fgets(conta.telefone.DDD, sizeof(conta.telefone.DDD), stdin);
     remover_nova_linha(conta.telefone.DDD);
+    fflush(stdin);
     tabela_style();
     printf("Numero - exemplo 000000000: ");
     fgets(conta.telefone.numero, sizeof(conta.telefone.numero), stdin);
     remover_nova_linha(conta.telefone.numero);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
-	limpar_buffer();
+
     printf("Endereco\n\n");
     tabela_style();
     printf("Digite o CEP (sem pontos e tracos): ");
     fgets(conta.endereco.cep, sizeof(conta.endereco.cep), stdin);
     remover_nova_linha(conta.endereco.cep);
+    fflush(stdin);
     tabela_style();
     printf("Digite o logradouro: ");
     fgets(conta.endereco.logradouro, sizeof(conta.endereco.logradouro), stdin);
     remover_nova_linha(conta.endereco.logradouro);
+    fflush(stdin);
     tabela_style();
     printf("Digite o numero da casa: ");
     scanf("%d", &conta.endereco.n_casa);
@@ -190,18 +198,21 @@ void criar_conta_cliente_corrente(){
     printf("Digite o nome do bairro: ");
     fgets(conta.endereco.bairro, sizeof(conta.endereco.bairro), stdin);
     remover_nova_linha(conta.endereco.bairro);
+    fflush(stdin);
     tabela_style();
     printf("Digite o nome da cidade: ");
     fgets(conta.endereco.cidade, sizeof(conta.endereco.cidade), stdin);
     remover_nova_linha(conta.endereco.cidade);
+    fflush(stdin);
     tabela_style();
     printf("Digite o nome do estado: ");
     fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
     remover_nova_linha(conta.endereco.estado);
+    fflush(stdin);
     tabela_style();
     printf("Crie sua senha: ");
     fgets(conta.senha, sizeof(conta.senha), stdin);
-    // fgets(conta.senha, sizeof(), stdin);
+    fflush(stdin);
     remover_nova_linha(conta.senha);
 
     conta.n_conta = contador_conta_corrente;
@@ -214,12 +225,15 @@ void criar_conta_cliente_corrente(){
         fwrite(&conta, sizeof(Cliente), 1, file);
         fclose(file);
     } else {
+        tabela_style();
         printf("Erro ao abrir o arquivo para salvar a conta.\n");
     }
 
     salvar_contador_conta_corrente();
 
+    tabela_style();
     printf("Conta criada com sucesso!!!\n\n");
+    system("pause");
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -238,6 +252,7 @@ void criar_conta_cliente_poupanca(){
     printf("Digite a agência: ");
     fgets(conta.agencia, sizeof(conta.agencia), stdin);
     remover_nova_linha(conta.agencia);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
     printf("Numero da conta: %d\n", contador_conta_poupanca);
@@ -246,16 +261,19 @@ void criar_conta_cliente_poupanca(){
     printf("Digite seu primeiro nome: ");
     fgets(conta.nome.nome, sizeof(conta.nome.nome), stdin);
     remover_nova_linha(conta.nome.nome);
+    fflush(stdin);
     tabela_style();
     printf("Digite seu sobrenome: ");
     fgets(conta.nome.sobrenome, sizeof(conta.nome.sobrenome), stdin);
     remover_nova_linha(conta.nome.sobrenome);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
 
     printf("Digite seu CPF (so numeros): ");
     fgets(conta.cpf, sizeof(conta.cpf), stdin);
     remover_nova_linha(conta.cpf);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
 
@@ -281,22 +299,25 @@ void criar_conta_cliente_poupanca(){
     printf("DDD - exemplo 61: ");
     fgets(conta.telefone.DDD, sizeof(conta.telefone.DDD), stdin);
     remover_nova_linha(conta.telefone.DDD);
+    fflush(stdin);
     tabela_style();
     printf("Numero - exemplo 000000000: ");
     fgets(conta.telefone.numero, sizeof(conta.telefone.numero), stdin);
     remover_nova_linha(conta.telefone.numero);
+    fflush(stdin);
     tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
-	limpar_buffer();
     printf("Endereco\n\n");
     tabela_style();
     printf("Digite o CEP (sem pontos e tracos): ");
     fgets(conta.endereco.cep, sizeof(conta.endereco.cep), stdin);
     remover_nova_linha(conta.endereco.cep);
+    fflush(stdin);
     tabela_style();
     printf("Digite o logradouro: ");
     fgets(conta.endereco.logradouro, sizeof(conta.endereco.logradouro), stdin);
     remover_nova_linha(conta.endereco.logradouro);
+    fflush(stdin);
     tabela_style();
     printf("Digite o numero da casa: ");
     scanf("%d", &conta.endereco.n_casa);
@@ -305,19 +326,22 @@ void criar_conta_cliente_poupanca(){
     printf("Digite o nome do bairro: ");
     fgets(conta.endereco.bairro, sizeof(conta.endereco.bairro), stdin);
     remover_nova_linha(conta.endereco.bairro);
+    fflush(stdin);
     tabela_style();
     printf("Digite o nome da cidade: ");
     fgets(conta.endereco.cidade, sizeof(conta.endereco.cidade), stdin);
     remover_nova_linha(conta.endereco.cidade);
+    fflush(stdin);
     tabela_style();
     printf("Digite o nome do estado: ");
     fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
     remover_nova_linha(conta.endereco.estado);
+    fflush(stdin);
     tabela_style();
     printf("Crie sua senha: ");
     fgets(conta.senha, sizeof(conta.senha), stdin);
-    // fgets(conta.senha, sizeof(), stdin);
     remover_nova_linha(conta.senha);
+    fflush(stdin);
 
     conta.n_conta = contador_conta_corrente;
     conta.saldo = 0;
@@ -329,12 +353,15 @@ void criar_conta_cliente_poupanca(){
         fwrite(&conta, sizeof(Cliente), 1, file);
         fclose(file);
     } else {
+        tabela_style();
         printf("Erro ao abrir o arquivo para salvar a conta.\n");
     }
 
     salvar_contador_conta_poupanca();
 
+    tabela_style();
     printf("Conta criada com sucesso!!!\n\n");
+    system("pause");
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -348,69 +375,105 @@ void criar_conta_funcionario(){
     //-------------------------------------------------------------------------------------------------------------------
 	limpar_buffer();   
     limpar_tela();
+    style_bank();
+
     printf("Digite o cargo do funcionário: ");
     fgets(conta.cargo, sizeof(conta.cargo), stdin);
     remover_nova_linha(conta.cargo);
+    fflush(stdin);
+
+    tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
     printf("Código do funcionario: %d\n", contador_funcionario);
     //-------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------
-
+    tabela_style();
     printf("Digite o primeiro nome: ");
     fgets(conta.nome.nome, sizeof(conta.nome.nome), stdin);
     remover_nova_linha(conta.nome.nome);
+    fflush(stdin);
+    tabela_style();
     printf("Digite o sobrenome: ");
     fgets(conta.nome.sobrenome, sizeof(conta.nome.sobrenome), stdin);
     remover_nova_linha(conta.nome.sobrenome);
+    fflush(stdin);
     //-------------------------------------------------------------------------------------------------------------------
 
+    tabela_style();
     printf("Digite seu CPF (so numeros): ");
     fgets(conta.cpf, sizeof(conta.cpf), stdin);
     remover_nova_linha(conta.cpf);
+    fflush(stdin);
     //-------------------------------------------------------------------------------------------------------------------
 
-    printf("Data de nascimento\n\nDia");
+    tabela_style();
+    printf("Data de nascimento\n");
+    tabela_style();
+    printf("Dia: ");
     scanf("%d", &conta.nascimento.dia);
     limpar_buffer();
+    tabela_style();
     printf("Mês: ");
     scanf("%d", &conta.nascimento.mes);
     limpar_buffer();
+    tabela_style();
     printf("Ano - ex 0000: ");
     scanf("%d", &conta.nascimento.ano);
     limpar_buffer();
     //-------------------------------------------------------------------------------------------------------------------
 
-    printf("Telefone\n\nDDD - exemplo 61: ");
+    tabela_style();
+    printf("Telefone\n\n");
+    tabela_style();
+    printf("DDD - exemplo 61: ");
     fgets(conta.telefone.DDD, sizeof(conta.telefone.DDD), stdin);
     remover_nova_linha(conta.telefone.DDD);
-    printf("Número - exemplo 000000000: ");
+    fflush(stdin);
+    tabela_style();
+    printf("Numero - exemplo 000000000: ");
     fgets(conta.telefone.numero, sizeof(conta.telefone.numero), stdin);
     remover_nova_linha(conta.telefone.numero);
+    fflush(stdin);
+    tabela_style();
     //-------------------------------------------------------------------------------------------------------------------
-	limpar_buffer();
-    printf("Endereco\n\nDigite o CEP (sem pontos e tracos): ");
+    limpar_buffer();
+    printf("Endereco\n\n");
+    tabela_style();
+    printf("Digite o CEP (sem pontos e tracos): ");
     fgets(conta.endereco.cep, sizeof(conta.endereco.cep), stdin);
     remover_nova_linha(conta.endereco.cep);
+    fflush(stdin);
+    tabela_style();
     printf("Digite o logradouro: ");
     fgets(conta.endereco.logradouro, sizeof(conta.endereco.logradouro), stdin);
     remover_nova_linha(conta.endereco.logradouro);
+    fflush(stdin);
+    tabela_style();
     printf("Digite o numero da casa: ");
     scanf("%d", &conta.endereco.n_casa);
     limpar_buffer();
+    fflush(stdin);
+    tabela_style();
     printf("Digite o nome do bairro: ");
     fgets(conta.endereco.bairro, sizeof(conta.endereco.bairro), stdin);
     remover_nova_linha(conta.endereco.bairro);
+    fflush(stdin);
+    tabela_style();
     printf("Digite o nome da cidade: ");
     fgets(conta.endereco.cidade, sizeof(conta.endereco.cidade), stdin);
     remover_nova_linha(conta.endereco.cidade);
+    fflush(stdin);
+    tabela_style();
     printf("Digite o nome do estado: ");
     fgets(conta.endereco.estado, sizeof(conta.endereco.estado), stdin);
     remover_nova_linha(conta.endereco.estado);
+    fflush(stdin);
     
+    tabela_style();
     printf("Crie a senh do funcionário: ");
     fgets(conta.senha, sizeof(conta.senha), stdin);
-    // fgets(conta.senha, sizeof(), stdin);
     remover_nova_linha(conta.senha);
+    fflush(stdin);
 
     conta.codigo = contador_funcionario;
     //-------------------------------------------------------------------------------------------------------------------
@@ -421,15 +484,17 @@ void criar_conta_funcionario(){
         fwrite(&conta, sizeof(Funcionario), 1, file);
         fclose(file);
     } else {
+        tabela_style();
         printf("Erro ao abrir o arquivo para salvar a conta.\n");
     }
 
     salvar_contador_funcionario();
 
 
-
+    tabela_style();
     printf("Conta criada com sucesso!!!\n\n");
 
+    tabela_style();
     system("pause");
 }
 	
