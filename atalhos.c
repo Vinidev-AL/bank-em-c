@@ -3,6 +3,7 @@
 #include "destinador.h"
 #include <string.h>
 
+
 void limpar_tela() {
     #ifdef _WIN32
         system("cls");
@@ -33,3 +34,4 @@ void removeEspacos(char *str) {
     }
     str[j] = '\0';
 }
+

@@ -292,6 +292,7 @@ switch (opc) {
             while (verificador == 0) {
                 fseek(file_read_poup, i * sizeof(Cliente), SEEK_SET);
 
+
                 if (fread(&conta, sizeof(Cliente), 1, file_read_poup) != 1) {
                     if (feof(file_read_poup)) {
                         tabela_style();
@@ -375,3 +376,5 @@ switch (opc) {
 
 
 }
+
+

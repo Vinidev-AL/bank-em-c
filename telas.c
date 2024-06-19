@@ -47,7 +47,6 @@ void menu_principal() {
 	setlocale(LC_ALL, "portuguese");
 	while(1){
 		limpar_tela();
-		
 		malvader();
         printf("MENU PRINCIPAL\n\n\n");
         tabela_style();
@@ -129,8 +128,14 @@ void menu_cliente_corrente(int contan){
 		float deposito;
 		float saque;
 		
+		char nome_arquivo[100];
+		sprintf(nome_arquivo, "extrato_conta_corrente%d.csv", contan);
+		
 		FILE *arqui;
-		arqui = fopen("extratos.txt", "a");
+		arqui = fopen(nome_arquivo, "a");
+		
+		FILE *arqui_geral;
+		arqui_geral = fopen("extratos.csv", "a");
 	
 		switch(opc){
 		case 1:
@@ -149,7 +154,9 @@ void menu_cliente_corrente(int contan){
  	 		conta.saldo += deposito;
  	 		tabela_style();
  	 		fprintf(arqui, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
+ 	 		fprintf(arqui_geral, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
 			fclose(arqui);
+			fclose(arqui_geral);
  	 		
  	 		fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
@@ -175,7 +182,9 @@ void menu_cliente_corrente(int contan){
 			{
 				tabela_style();
 				fprintf(arqui, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
+				fprintf(arqui_geral, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
 				fclose(arqui);
+				fclose(arqui_geral);
 				conta.saldo -= saque;
 				fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
@@ -189,12 +198,20 @@ void menu_cliente_corrente(int contan){
 			
 			break;
 			
-		case 4:
-			system("extratos.xlsx");
+		case 4: {
+			fclose(arqui);
+			fclose(arqui_geral);
+			 char excel[100] = "";
+			 strcat(excel, nome_arquivo);
+			system(excel);
+			fclose(arqui);
+			fclose(arqui_geral);
 			tabela_style();
 			system("pause");
 			break;
+		}
 		case 5:
+			
 			tabela_style();
 			printf("Seu limite atual e: R$%.2f\n\n", conta.limite);
 			tabela_style();
@@ -203,6 +220,8 @@ void menu_cliente_corrente(int contan){
 			break;
 			
 		case 6:
+	 		 fclose(arqui);
+			fclose(arqui_geral);
 			tabela_style();
 			printf("Saindo...");
 			fclose(file);
@@ -264,8 +283,15 @@ void menu_cliente_poupanca(int contan){
 		float deposito;
 		float saque;
 		
+		char nome_arquivo[100];
+		sprintf(nome_arquivo, "extrato_conta_poupanca%d.csv", contan);
+		
 		FILE *arqui;
-		arqui = fopen("extratos.txt", "a");
+		arqui = fopen(nome_arquivo, "a");
+		
+		FILE *arqui_geral;
+		arqui_geral = fopen("extratos.csv", "a");
+		
 	
 		switch(opc){
 		case 1:
@@ -281,7 +307,9 @@ void menu_cliente_poupanca(int contan){
  	 		conta.saldo += deposito;
  	 		
 			fprintf(arqui, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
+			fprintf(arqui_geral, "Depositado R$%.2f na conta de %s %s\n", deposito, conta.nome.nome, conta.nome.sobrenome);
 			fclose(arqui);
+			fclose(arqui_geral);
  	 		
  	 		fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
@@ -305,7 +333,9 @@ void menu_cliente_poupanca(int contan){
 			{
 				
 				fprintf(arqui, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
+				fprintf(arqui_geral, "Sacados R$%.2f da conta do cliente %s %s\n", saque, conta.nome.nome, conta.nome.sobrenome);
 				fclose(arqui);
+				fclose(arqui_geral);
 				conta.saldo -= saque;
 				fseek(file, -sizeof(Cliente), SEEK_CUR);
  	 		
@@ -320,16 +350,25 @@ void menu_cliente_poupanca(int contan){
 			break;
 			
 		case 4:
-			system("extratos.xlsx");
+				fclose(arqui);
+	 			char excel[100] = "";
+	 			strcat(excel, nome_arquivo);
+			system(excel);
+			fclose(arqui);
+			tabela_style();
 			system("pause");
 			break;
 
 		case 5:
+			 fclose(arqui);
+			fclose(arqui_geral);
 			printf("Saindo...");
 			fclose(file);
 			return;
 			break;
 		dafault:
+				fclose(arqui);
+			fclose(arqui_geral);
 			printf("OPCAO INVALIDA");
 			system("pause");
 		}
@@ -340,6 +379,8 @@ void menu_cliente_poupanca(int contan){
 
 void menu_funcionario(){
 	while(1){
+ 			 FILE *arqui_geral_dois;
+		arqui_geral_dois = fopen("extratos.csv", "a");
 		int opc;
 		int op;
 		int opc_encerrar;
@@ -566,9 +607,10 @@ void menu_funcionario(){
 				break;
 			case 6:
 				tabela_style();
+				fclose(arqui_geral_dois);
 				printf("Gerando relatorios...");
 				sleep(1);
-				system("extratos.xlsx");
+				system("extratos.csv");
 				break;
 			case 7:
 				return;

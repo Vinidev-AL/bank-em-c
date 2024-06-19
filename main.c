@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "destinador.h"
+#include <windows.h>
+#include <mmsystem.h>
+
 
 int main() {
-	menu_principal();
+    Beep(200, 300);
+    menu_principal();
+
+    return 0;
 }
 

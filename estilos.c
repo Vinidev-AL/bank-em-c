@@ -43,76 +43,22 @@ void tabela_style(){
 
 void logo_bank_malvader(){
 	printf("\n\t\t");
-	printf("\033[0;32m");
-			printf("######          ######           ##          #####        ######          ######       ##           #######       ##########   ######## \n\t\t");usleep(50000);
-			printf(" ######        ######           ####          ###           ###            ###        ####          ###    ###    ##########   ###    ###\n\t\t");usleep(50000);
-			printf(" ### ###      ### ###          ######         ###            ###          ###        ######         ###     ###   ####         ###    ### \n\t\t");usleep(50000);
-			printf(" ###  ###    ###  ###         ###  ###        ###             ###        ###        ###  ###        ###      ###  ####         ###    ## \n\t\t");usleep(50000);
-			printf(" ###   ###  ###   ###        ###    ###       ###              ###      ###        ###    ###       ###      ###  ########     #######  \n\t\t");usleep(50000);
-			printf(" ###    ######    ###       ############      ###               ###    ###        ############      ###      ###  ########     ######  \n\t\t");usleep(50000);
-			printf(" ###     ####     ###      ##############     ###                ###  ###        ##############     ###      ###  ####         ###  ### \n\t\t");usleep(50000);
-			printf(" ###      ##      ###     ###          ###    ###       ###       ######        ###          ###    ###     ###   ####         ###   ###\n\t\t");usleep(50000);
-			printf(" ###              ###    ###            ###   #############        ####        ###            ###   ###    ###    ##########   ###    ### \n\t\t");usleep(50000);
-			printf("#####           #####  ######         ####### #############         ##       ######         ####### #######       ##########  #####   #####\n\n\n\t\t\t\t\t\t\t");usleep(50000);
-
-
-
-
-			printf(" ########        ##       ####     #### ####   ####\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("  ##   ###      ####       ####     ##   ##    ##\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("  ##   ###     ##  ##      ## ##    ##   ##   ##\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("  #######     ##    ##     ##  ##   ##   ######\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("  ##   ###   ##########    ##   ##  ##   ##   ##\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("  ##   ###  ###      ###   ##    ## ##   ##    ##\n\t\t\t\t\t\t\t");usleep(50000);
-			printf(" ########  #####    ##### ####    ##### ####   ####\n\n\t\t\t\t\t\t\t");usleep(50000);
-			printf("\033[0m");
+	                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                																																																																																																                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                
+	
+			
+			system("pause");
+			limpar_tela();
 }
 
 void style_icon(){
-	printf("\033[0;32m");
-
-	printf("          $$                     $$           \n");
-	tabela_style();
-	printf("          $$                     $$           \n");
-	tabela_style();
-    printf("       $$$$$$$$$              $$$$$$$$$       \n");
-    tabela_style();
-    printf("     $$$$$$$$$$$$$          $$$$$$$$$$$$$     \n");
-    tabela_style();
-    printf("   $$$$$  $$ $$$$$$       $$$$$  $$ $$$$$$    \n");
-    tabela_style();
-    printf("  $$$$$   $$  $$$$$$      $$$$$  $$ $$$$$$    \n");
-    tabela_style();
-    printf("  $$$$$   $$             $$$$$   $$           \n");
-    tabela_style();
-    printf("   $$$$$$ $$              $$$$$$ $$           \n");
-    tabela_style();
-    printf("    $$$$$$$$               $$$$$$$$           \n");
-    tabela_style();
-    printf("      $$$$$$$$$              $$$$$$$$$        \n");
-    tabela_style();
-    printf("          $$$$$$$                $$$$$$$      \n");
-    tabela_style();
-    printf("          $$ $$$$$$              $$ $$$$$$    \n");
-    tabela_style();
-    printf("  $$$$$   $$ $$$$$$      $$$$$   $$ $$$$$$    \n");
-    tabela_style();
-    printf("  $$$$$   $$ $$$$$$      $$$$$   $$ $$$$$$    \n");
-    tabela_style();
-    printf("   $$$$$$$$$$$$$$         $$$$$$$$$$$$$$      \n");
-    tabela_style();
-    printf("     $$$$$$$$$$$            $$$$$$$$$$$       \n");
-    tabela_style();
-    printf("       $$$$$$$                $$$$$$$         \n");
-    tabela_style();
-    printf("          $$                     $$           \n");
-    tabela_style();
-    printf("          $$                     $$           \n");
-
-
-
-
-	printf("\033[0m");
+	
 }
 
 void delay(){
@@ -142,40 +88,40 @@ void carregar(){
 
 void malvader(){
 
-	printf("\033[1;34m");tabela_style();
+	tabela_style();
 	                                 
                                         
 printf("                              --  --                          \n");tabela_style();usleep(5000);
-printf("                        ##              ##                     \n");tabela_style();usleep(5000);
-printf("                    ##                      ##                 \n");tabela_style();usleep(5000);
-printf("                  ##          ##              ##               \n");tabela_style();usleep(5000);
-printf("                ##            ##  ##            ##             \n");tabela_style();usleep(5000);
-printf("              ####            ##  ##            ####           \n");tabela_style();usleep(5000);
-printf("            ######            ##  ##            ####@@         \n");tabela_style();usleep(5000);
-printf("            ######      MMmm  ######  MMMM      ######         \n");tabela_style();usleep(5000);
-printf("            ######  ##############--##########  ######         \n");tabela_style();usleep(5000);
-printf("          ####################::#######################        \n");tabela_style();usleep(5000);
-printf("          ########  ######  ##MM######  ######  ######mm       \n");tabela_style();usleep(5000);
-printf("          ######  ####++####----mm::--##########  ######       \n");tabela_style();usleep(5000);
-printf("          ####  ##            ######            ##  ####       \n");tabela_style();usleep(5000);
-printf("          ####                ######                ####       \n");tabela_style();usleep(5000);
-printf("          ##    ##            ######            ##    ##       \n");tabela_style();usleep(5000);
-printf("        ####    ##########     ####    ##########    ####     \n");tabela_style();usleep(5000);
-printf("        ##        ##                  ##      mm        ##     \n");tabela_style();usleep(5000);
-printf("        ##      mm##    ####  ##  --  ####    ##        ##     \n");tabela_style();usleep(5000);
-printf("      ##          ##    ######      ######    ##          ##   \n");tabela_style();usleep(5000);
-printf("      ##          ##    ####  ##--##  MM##    ##          ##   \n");tabela_style();usleep(5000);
-printf("    ####            ####    ####  ####    ####            #### \n");tabela_style();usleep(5000);
-printf("    ##              ##  ##  ####  ####  ##  ##              ## \n");tabela_style();usleep(5000);
-printf("  #                   ######################                ## \n");tabela_style();usleep(5000);
-printf("  #                   ######################                ## \n");tabela_style();usleep(5000);
-printf("                        ####          mm##     \n");tabela_style();usleep(5000);
-printf("                          ####      ####     \n");tabela_style();usleep(5000);
-printf("                            ####  ####         \n");tabela_style();usleep(5000);
-printf("                                ##         \n");tabela_style();usleep(5000);
+printf("                        $$              $$                     \n");tabela_style();usleep(5000);
+printf("                    $$                      $$                 \n");tabela_style();usleep(5000);
+printf("                  $$          $$              $$               \n");tabela_style();usleep(5000);
+printf("                $$            $$  $$            $$             \n");tabela_style();usleep(5000);
+printf("              $$$$            $$  $$            $$$$           \n");tabela_style();usleep(5000);
+printf("            $$$$$$            $$  $$            $$$$@@         \n");tabela_style();usleep(5000);
+printf("            $$$$$$      MMmm  $$$$$$  MMMM      $$$$$$         \n");tabela_style();usleep(5000);
+printf("            $$$$$$  $$$$$$$$$$$$$$--$$$$$$$$$$  $$$$$$         \n");tabela_style();usleep(5000);
+printf("          $$$$$$$$$$$$$$$$$$$$::$$$$$$$$$$$$$$$$$$$$$$$        \n");tabela_style();usleep(5000);
+printf("          $$$$$$$$  $$$$$$  $$MM$$$$$$  $$$$$$  $$$$$$mm       \n");tabela_style();usleep(5000);
+printf("          $$$$$$  $$$$++$$$$----mm::--$$$$$$$$$$  $$$$$$       \n");tabela_style();usleep(5000);
+printf("          $$$$  $$            $$$$$$            $$  $$$$       \n");tabela_style();usleep(5000);
+printf("          $$$$                $$$$$$                $$$$       \n");tabela_style();usleep(5000);
+printf("          $$    $$            $$$$$$            $$    $$       \n");tabela_style();usleep(5000);
+printf("        $$$$    $$$$$$$$$$     $$$$    $$$$$$$$$$    $$$$     \n");tabela_style();usleep(5000);
+printf("        $$        $$                  $$      mm        $$     \n");tabela_style();usleep(5000);
+printf("        $$      mm$$    $$$$  $$  --  $$$$    $$        $$     \n");tabela_style();usleep(5000);
+printf("      $$          $$    $$$$$$      $$$$$$    $$          $$   \n");tabela_style();usleep(5000);
+printf("      $$          $$    $$$$  $$--$$  MM$$    $$          $$   \n");tabela_style();usleep(5000);
+printf("    $$$$            $$$$    $$$$  $$$$    $$$$            $$$$ \n");tabela_style();usleep(5000);
+printf("    $$              $$  $$  $$$$  $$$$  $$  $$              $$ \n");tabela_style();usleep(5000);
+printf("  $                   $$$$$$$$$$$$$$$$$$$$$$                $$ \n");tabela_style();usleep(5000);
+printf("  $                   $$$$$$$$$$$$$$$$$$$$$$                $$ \n");tabela_style();usleep(5000);
+printf("                        $$$$          mm$$     \n");tabela_style();usleep(5000);
+printf("                          $$$$      $$$$     \n");tabela_style();usleep(5000);
+printf("                            $$$$  $$$$         \n");tabela_style();usleep(5000);
+printf("                                $$         \n");tabela_style();usleep(5000);
 printf("                                                    \n");tabela_style();usleep(5000);
 printf("                                                             \n");tabela_style();usleep(5000);
-    printf("\033[1;34m");
+   
 }
 
 

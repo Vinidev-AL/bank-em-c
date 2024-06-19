@@ -35,6 +35,7 @@ void consultar_cliente();
 void removeEspacos(char *str);
 
 
+
 // structs
 
 typedef struct {
